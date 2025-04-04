@@ -1,0 +1,156 @@
+:root {
+  --main-color: #5c3f64;
+  --background-color: #e1e1e1;
+  --hover-color: #775481;
+}
+.title {
+  color: var(--main-color);
+}
+#root {
+  position: relative;
+}
+
+/*Calendar */
+.react-calendar {
+  border: 1px solid var(--main-color);
+  background-color: #fffdfd;
+  border-radius: 10px;
+}
+.react-calendar__tile--active {
+  background: var(--main-color) !important;
+}
+
+/* task input */
+.task-input input:focus {
+  box-shadow: none;
+  border: 2px solid var(--main-color);
+}
+.task-input input,
+.task-input button {
+  border: 1px solid var(--main-color);
+}
+.task-input button {
+  background-color: var(--main-color);
+  color: white;
+  transition: 0.2s;
+}
+.task-input button:hover {
+  background-color: var(--hover-color);
+  border: 1px solid var(--main-color);
+}
+
+/*filter */
+.filter {
+  color: var(--main-color);
+}
+.categories p:not(:last-child) {
+  border: 2px solid var(--main-color);
+  border-radius: 10px;
+  padding: 2px 20px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+.categories p svg {
+  color: var(--main-color);
+}
+.categories p:not(:last-child):hover {
+  cursor: pointer;
+  color: white;
+  background-color: var(--main-color);
+}
+.categories p:not(:last-child).active {
+  background-color: var(--main-color);
+  color: white;
+}
+.message {
+  font-size: 20px;
+  color: var(--main-color);
+  font-weight: 500;
+}
+
+/* task */
+.task {
+  background-color: #fffdfd;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 12px 2px #b7b2b2;
+}
+.task .icons svg {
+  color: var(--main-color);
+}
+.task .icons svg:hover {
+  color: var(--hover-color);
+  cursor: pointer;
+}
+.task input[type="text"] {
+  width: 90%;
+  border: none;
+}
+.task input[type="text"]:focus {
+  outline: none;
+}
+.task input[type="checkbox"] {
+  accent-color: var(--main-color);
+  margin-left: 2px;
+  width: 15px;
+  height: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.task input[type="checkbox"]:checked + input {
+  color: #979494;
+  text-decoration: line-through;
+}
+
+/* Modal */
+.modal-content {
+  background-color: transparent !important;
+}
+.modal-dialog {
+  animation: slideUp 0.4s ease-out;
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+    overflow-x: hidden;
+  }
+}
+
+/* Media */
+@media (max-width: 576px) {
+  .filter h4 {
+    font-size: 18px;
+  }
+  .categories p:not(:last-child) {
+    padding: 1px 10px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 991px) {
+  .toggler {
+    display: inline-block;
+    font-weight: 700;
+    background-color: var(--main-color);
+    text-align: center;
+    padding: 5px;
+    width: 60px;
+    height: 25px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 25px 25px 0 0;
+    margin-top: 10px;
+    transition: 0.2s ease-in-out;
+  }
+  .toggler:hover {
+    cursor: pointer;
+    height: 35px;
+  }
+  .svg path {
+    fill: var(--background-color);
+  }
+}
